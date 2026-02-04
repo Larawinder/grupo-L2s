@@ -1,0 +1,501 @@
+/* ============================================
+   GRUPO L2S - Soluções Page Styles
+   
+   ARQUIVO: solucoes.css
+   Contém: Page Hero Soluções, Solutions Hub Grid,
+   Why Choose Section, Contracts CTA
+============================================ */
+
+/* ============ PAGE HERO - SOLUÇÕES ============ */
+.page-hero-solucoes {
+  background: 
+    url('../img/solucoes-bg.png') center center / cover no-repeat;
+}
+
+/* ============ SOLUTIONS HUB ============ */
+.solutions-hub {
+  background: var(--bg-primary);
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+
+/* ============ PAGE HERO - SOLUÇÕES ============ */
+.page-hero-solucoes {
+  background: 
+    url('../img/solucoes-bg.png') center center / cover no-repeat;
+}
+
+/* Gradiente mais escuro para a página Soluções */
+.page-hero-solucoes::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse at center, 
+      rgba(11, 11, 11, 0.6) 0%,
+      rgba(11, 11, 11, 0.7) 50%,
+      rgba(11, 11, 11, 0.85) 100%
+    ),
+    linear-gradient(to bottom, 
+      rgba(11, 11, 11, 0.9) 0%,
+      rgba(11, 11, 11, 0.3) 30%
+    ),
+    linear-gradient(to top, 
+      rgba(11, 11, 11, 0.95) 0%,
+      rgba(11, 11, 11, 0.4) 40%
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+/* Solution Card */
+.solution-card {
+  display: block;
+  background: var(--bg-secondary);
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 12px;
+  padding: 40px 30px;
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.solution-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: var(--transition-normal);
+}
+
+.solution-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(212, 168, 75, 0.05) 0%, transparent 60%);
+  opacity: 0;
+  transition: var(--transition-normal);
+  pointer-events: none;
+}
+
+.solution-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-card), 0 0 40px rgba(212, 168, 75, 0.1);
+}
+
+.solution-card:hover::before {
+  transform: scaleX(1);
+}
+
+.solution-card:hover::after {
+  opacity: 1;
+}
+
+/* Solution Icon */
+.solution-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  border-radius: 16px;
+  margin-bottom: 25px;
+  transition: var(--transition-normal);
+}
+
+.solution-icon i,
+.solution-icon svg {
+  width: 36px;
+  height: 36px;
+  color: var(--bg-primary);
+  stroke-width: 1.5;
+}
+
+.solution-card:hover .solution-icon {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: var(--shadow-gold);
+}
+
+/* Solution Content */
+.solution-content {
+  position: relative;
+  z-index: 1;
+}
+
+.solution-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+}
+
+.solution-card:hover .solution-content h3 {
+  color: var(--gold-light);
+}
+
+.solution-content > p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Solution Features List */
+.solution-features {
+  margin-bottom: 25px;
+}
+
+.solution-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--bg-tertiary);
+  transition: var(--transition-fast);
+}
+
+.solution-features li:last-child {
+  border-bottom: none;
+}
+
+.solution-features li i,
+.solution-features li svg {
+  width: 16px;
+  height: 16px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.solution-card:hover .solution-features li {
+  color: var(--text-primary);
+  padding-left: 5px;
+}
+
+/* Solution Link */
+.solution-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold);
+  transition: var(--transition-fast);
+}
+
+.solution-link i,
+.solution-link svg {
+  width: 18px;
+  height: 18px;
+  transition: var(--transition-fast);
+}
+
+.solution-card:hover .solution-link {
+  gap: 12px;
+}
+
+.solution-card:hover .solution-link i,
+.solution-card:hover .solution-link svg {
+  transform: translateX(4px);
+}
+
+/* ============ WHY CHOOSE SECTION ============ */
+.why-choose {
+  background: var(--bg-secondary);
+}
+
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.why-choose-item {
+  text-align: center;
+  padding: 40px 25px;
+  background: var(--bg-primary);
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 12px;
+  position: relative;
+  transition: var(--transition-normal);
+}
+
+.why-choose-item::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+  transition: var(--transition-normal);
+}
+
+.why-choose-item:hover {
+  border-color: var(--gold);
+  transform: translateY(-5px);
+}
+
+.why-choose-item:hover::before {
+  width: 60%;
+}
+
+.why-choose-number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--gold);
+  opacity: 0.3;
+  line-height: 1;
+  margin-bottom: 15px;
+  transition: var(--transition-normal);
+}
+
+.why-choose-item:hover .why-choose-number {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.why-choose-item h4 {
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.why-choose-item p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ============ CONTRACTS CTA ============ */
+.contracts-cta {
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.contracts-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(circle at right center, rgba(212, 168, 75, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contracts-cta-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.contracts-cta-text .section-subtitle {
+  margin-bottom: 10px;
+}
+
+.contracts-cta-text .section-title {
+  margin-bottom: 20px;
+}
+
+.contracts-cta-text > p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+/* Contracts Benefits List */
+.contracts-benefits {
+  margin-bottom: 35px;
+}
+
+.contracts-benefits li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  padding: 10px 0;
+  transition: var(--transition-fast);
+}
+
+.contracts-benefits li i,
+.contracts-benefits li svg {
+  width: 22px;
+  height: 22px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.contracts-benefits li:hover {
+  color: var(--text-primary);
+  padding-left: 8px;
+}
+
+/* Contracts Icon Grid */
+.contracts-cta-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contracts-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 320px;
+}
+
+.contracts-icon {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border: 2px solid var(--bg-tertiary);
+  border-radius: 20px;
+  transition: var(--transition-normal);
+}
+
+.contracts-icon i,
+.contracts-icon svg {
+  width: 50px;
+  height: 50px;
+  color: var(--gold);
+  stroke-width: 1.5;
+  transition: var(--transition-normal);
+}
+
+.contracts-icon:hover {
+  border-color: var(--gold);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: var(--shadow-gold);
+}
+
+.contracts-icon:hover i,
+.contracts-icon:hover svg {
+  transform: scale(1.1);
+}
+
+/* Staggered Animation for Icon Grid */
+.contracts-icon:nth-child(1) { transition-delay: 0.1s; }
+.contracts-icon:nth-child(2) { transition-delay: 0.2s; }
+.contracts-icon:nth-child(3) { transition-delay: 0.3s; }
+.contracts-icon:nth-child(4) { transition-delay: 0.4s; }
+
+/* ============ RESPONSIVE - SOLUÇÕES ============ */
+@media (max-width: 1200px) {
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .why-choose-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 968px) {
+  .contracts-cta-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    text-align: center;
+  }
+  
+  .contracts-benefits {
+    display: inline-block;
+    text-align: left;
+  }
+  
+  .contracts-cta-text .btn {
+    display: inline-flex;
+  }
+  
+  .contracts-icon-grid {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .solutions-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .solution-card {
+    padding: 30px 25px;
+  }
+  
+  .solution-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 14px;
+  }
+  
+  .solution-icon i,
+  .solution-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .why-choose-item {
+    padding: 30px 20px;
+  }
+  
+  .why-choose-number {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .solution-content h3 {
+    font-size: 1.25rem;
+  }
+  
+  .contracts-icon-grid {
+    gap: 15px;
+  }
+  
+  .contracts-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 16px;
+  }
+  
+  .contracts-icon i,
+  .contracts-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,0 +1,335 @@
+/* ============================================
+   GRUPO L2S - Quem Somos Page Styles
+   
+   ARQUIVO: quem-somos.css
+   Contém: About Section, Mission/Vision/Values,
+   Founder, Brands Carousel, Why Us
+============================================ */
+
+/* ============ ABOUT SECTION ============ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-content p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.about-content strong {
+  color: var(--gold);
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.stat-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 8px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: var(--transition-normal);
+}
+
+.stat-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.stat-number span {
+  font-size: 1.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* ============ MISSION VISION VALUES ============ */
+.mvv-section {
+  background: var(--bg-secondary);
+}
+
+.mvv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.mvv-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 8px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: var(--transition-normal);
+}
+
+.mvv-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-5px);
+}
+
+.mvv-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  border-radius: 50%;
+  color: var(--bg-primary);
+}
+
+.mvv-icon i,
+.mvv-icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.mvv-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.mvv-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ============ FOUNDER SECTION ============ */
+.founder-section {
+  background: var(--bg-primary);
+}
+
+.founder-content-centered {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.founder-content-centered .section-subtitle {
+  margin-bottom: 10px;
+}
+
+.founder-content-centered .section-title {
+  margin-bottom: 30px;
+}
+
+.founder-content-centered p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.founder-content-centered blockquote {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--gold-light);
+  padding: 30px 40px;
+  margin: 40px auto;
+  max-width: 600px;
+  border-left: 4px solid var(--gold);
+  background: var(--bg-secondary);
+  border-radius: 0 12px 12px 0;
+  text-align: left;
+}
+
+.founder-content-centered .founder-signature {
+  margin-top: 30px;
+}
+
+.founder-content-centered .founder-signature span {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--gold);
+}
+
+.founder-content-centered .founder-signature small {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* ============ BRANDS CAROUSEL ============ */
+.brands-section {
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+
+.brands-carousel {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+  background: var(--bg-secondary);
+  margin-top: 40px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 60px;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+}
+
+.carousel-slide {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 0 20px;
+  opacity: 0.7;
+  transition: var(--transition-normal);
+}
+
+.carousel-slide:hover {
+  opacity: 1;
+}
+
+.carousel-slide img {
+  max-height: 50px;
+  max-width: 150px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.brands-carousel:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+/* ============ WHY US SECTION ============ */
+.why-us-section {
+  background: var(--bg-secondary);
+}
+
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.why-us-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  padding: 30px 20px;
+  background: var(--bg-primary);
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 8px;
+  transition: var(--transition-normal);
+}
+
+.why-us-item:hover {
+  border-color: var(--gold);
+}
+
+.why-us-icon {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold);
+}
+
+.why-us-icon i,
+.why-us-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.why-us-content h4 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.why-us-content p {
+  font-size: 0.9rem;
+}
+
+/* ============ RESPONSIVE - QUEM SOMOS ============ */
+@media (max-width: 1100px) {
+  .why-us-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 968px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .founder-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .founder-content blockquote {
+    text-align: left;
+  }
+  
+  .founder-signature {
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-card {
+    padding: 25px;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .carousel-slide img {
+    max-height: 40px;
+    max-width: 120px;
+  }
+  
+  .why-us-grid {
+    grid-template-columns: 1fr;
+  }
+}

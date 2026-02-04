@@ -1,0 +1,399 @@
+/* ============================================
+   GRUPO L2S - Home Page Styles
+   
+   ARQUIVO: home.css
+   Contém: Hero, Services, Differentials, 
+   Process, Segments
+============================================ */
+
+/* ============ HERO ============ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: 
+    url('../img/hero-bg.png') center center / cover no-repeat;
+}
+
+/* Gradiente Central - Mais escuro para legibilidade */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    /* Gradiente radial central - MAIS ESCURO */
+    radial-gradient(ellipse at center, 
+      rgba(11, 11, 11, 0.7) 0%,
+      rgba(11, 11, 11, 0.8) 40%,
+      rgba(11, 11, 11, 0.95) 100%
+    ),
+    /* Gradiente de cima (para o header) */
+    linear-gradient(to bottom, 
+      rgba(11, 11, 11, 0.95) 0%,
+      rgba(11, 11, 11, 0.3) 25%
+    ),
+    /* Gradiente de baixo (para transição) */
+    linear-gradient(to top, 
+      rgba(11, 11, 11, 1) 0%,
+      rgba(11, 11, 11, 0.5) 35%
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Efeito sutil de brilho dourado */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse at 30% 70%, rgba(201, 162, 77, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 30%, rgba(201, 162, 77, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 10;
+  position: relative;
+  padding: 0 24px;
+}
+
+.hero-logo {
+  width: 150px;
+  height: auto;
+  margin: 0 auto 30px;
+  animation: fadeInDown 1s ease;
+}
+
+.hero-title {
+  font-size: clamp(3.5rem, 10vw, 6.5rem);
+  font-weight: 700;
+  margin-bottom: 10px;
+  animation: fadeInUp 1s ease 0.2s both;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--text-secondary);
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  animation: fadeInUp 1s ease 0.4s both;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease 0.6s both;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: fadeIn 1s ease 1s both;
+  z-index: 10;
+}
+
+.hero-scroll span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.scroll-indicator {
+  width: 24px;
+  height: 40px;
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  position: relative;
+}
+
+.scroll-indicator::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 2px;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+/* ============ SERVICES SECTION ============ */
+.services {
+  background: var(--bg-secondary);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 8px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+  transform: scaleX(0);
+  transition: var(--transition-normal);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-card);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  border-radius: 50%;
+  font-size: 1.8rem;
+}
+
+.service-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.service-link {
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.service-link:hover {
+  gap: 12px;
+}
+
+/* ============ DIFFERENTIALS ============ */
+.differentials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.differential-item {
+  text-align: center;
+  padding: 30px;
+}
+
+.differential-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  font-size: 2rem;
+  color: var(--gold);
+  transition: var(--transition-normal);
+}
+
+.differential-item:hover .differential-icon {
+  background: var(--gold);
+  color: var(--bg-primary);
+  transform: scale(1.1);
+}
+
+.differential-item h4 {
+  margin-bottom: 10px;
+}
+
+/* ============ PROCESS SECTION ============ */
+.process {
+  background: var(--bg-secondary);
+}
+
+.process-timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: var(--bg-tertiary);
+}
+
+.process-step {
+  flex: 1;
+  min-width: 180px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.step-number {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  transition: var(--transition-normal);
+}
+
+.process-step:hover .step-number {
+  background: var(--gold);
+  color: var(--bg-primary);
+  transform: scale(1.1);
+}
+
+.process-step h4 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.process-step p {
+  font-size: 0.9rem;
+}
+
+/* ============ SEGMENTS ============ */
+.segments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.segment-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 8px;
+  padding: 35px 25px;
+  text-align: center;
+  transition: var(--transition-normal);
+}
+
+.segment-card:hover {
+  border-color: var(--gold);
+  transform: scale(1.05);
+}
+
+.segment-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold);
+  transition: var(--transition-normal);
+}
+
+.segment-icon i,
+.segment-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke-width: 1.5;
+}
+
+.segment-card:hover .segment-icon {
+  background: var(--gold);
+  color: var(--bg-primary);
+}
+
+.segment-card h4 {
+  font-size: 1.1rem;
+}
+
+/* ============ RESPONSIVE - HOME ============ */
+@media (max-width: 768px) {
+  .hero-logo {
+    width: 120px;
+  }
+  
+  .process-timeline::before {
+    display: none;
+  }
+  
+  .process-timeline {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .process-step {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20px;
+  }
+}
